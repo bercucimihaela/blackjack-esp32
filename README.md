@@ -78,7 +78,3 @@ blackjack-esp32/
 Vezi fișierul `demo.mp4` din repo pentru o demonstrație a jocului pe hardware real.
 
 ---
-
-## 📄 Licență
-
-Proiect educațional — liber de utilizat și modificat.
