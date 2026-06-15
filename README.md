@@ -38,9 +38,12 @@ Pentru a compila și încărca proiectul:
 
 ```
 blackjack-esp32/
-├── blackjack_esp32.ino   # Codul sursă principal
-├── demo.mp4              # Video demonstrativ (display în funcțiune)
-└── README.md             # Acest fișier
+  src/
+  └── blackjack_esp32.ino
+ demo/
+   └── demo.mp4
+ .gitignore
+  README.md
 ```
 
 ---
