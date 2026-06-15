@@ -48,7 +48,7 @@ blackjack-esp32/
 
 ---
 
-## output
+## demo
 
 
 https://github.com/user-attachments/assets/f913fe4f-be90-4de5-984c-78d011dcea74
