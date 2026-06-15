@@ -1,16 +1,16 @@
-# 🃏 Blackjack pe ESP32 cu display OLED
+# ESP32 Blackjack Console
 
 A hardware-based Blackjack game implemented on an ESP32 microcontroller, featuring an I2C OLED display and physical GPIO button inputs. The project demonstrates finite state machine logic, hardware debouncing, and peripheral communication in C/C++.
 
 ---
 
-## 📋 Descriere
+## Descriere
 
 Jucătorul trage cărți (HIT) sau se oprește (STAND) folosind butoane conectate la GPIO-urile ESP32. Dealerul joacă automat conform regulilor clasice de Blackjack (trage până la minim 17 puncte). Rezultatul este afișat în timp real pe ecranul OLED.
 
 ---
 
-## 🔧 Componente Hardware
+## Componente Hardware
 
 | Componentă | Detalii |
 |---|---|
@@ -22,46 +22,29 @@ Jucătorul trage cărți (HIT) sau se oprește (STAND) folosind butoane conectat
 | Comunicație I2C | SDA → GPIO 32, SCL → GPIO 33 |
 
 ---
+## Ce face
 
-## 📦 Biblioteci necesare
+* Implementează regulile clasice de Blackjack printr-un automat de stări: la pornire primești 2 cărți (valori generate aleatoriu între 2 și 11).
+* **HIT (GPIO 25):** Tragi o carte nouă. Depășirea a 21 de puncte declanșează starea de BUST (pierdere).
+* **STAND (GPIO 26):** Oprești runda jucătorului, iar sistemul declanșează AI-ul dealerului (care trage cărți automat până la minim 17 puncte).
+* **RESET (GPIO 27):** Reinițializează starea jocului după finalizarea rundei.
+* Compară automat scorurile la final și afișează în timp real rezultatul pe display-ul OLED.
+---
+## Tech
 
-Instalează din **Arduino Library Manager**:
-
-- `Adafruit SSD1306`
-- `Adafruit GFX Library`
-- `Wire` (inclusă implicit în Arduino IDE)
-
+* **Limbaj:** C/C++
+* **Hardware:** Microcontroller ESP32 (ESP-WROOM-32)
+* **Biblioteci externe:** `Adafruit SSD1306`, `Adafruit GFX Library`, `Wire`
 ---
 
-## ⚡ Cum încarci codul
+## Run
 
-1. Instalează [Arduino IDE](https://www.arduino.cc/en/software)
-2. Adaugă suportul pentru ESP32: `File → Preferences → Additional Boards Manager URLs` → adaugă:
-   ```
-   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-   ```
-3. Mergi la `Tools → Board → Boards Manager` și instalează **esp32 by Espressif Systems**
-4. Selectează placa: `Tools → Board → ESP32 Dev Module`
-5. Instalează bibliotecile de mai sus
-6. Deschide `blackjack_esp32.ino` și apasă **Upload**
-
+Pentru a compila și încărca proiectul:
+1. Adaugă suportul pentru placa ESP32 în Arduino IDE (URL-ul pachetului Espressif în Preferences).
+2. Instalează bibliotecile `Adafruit SSD1306` și `Adafruit GFX` din Library Manager.
+3. Selectează **ESP32 Dev Module** din meniul *Boards* și execută comanda Upload pentru `blackjack_esp32.ino`.
 ---
-
-## 🎮 Cum se joacă
-
-- La pornire, jucătorul primește automat 2 cărți (valori între 2 și 11)
-- **GPIO 25 (HIT)** → trage o carte nouă
-- **GPIO 26 (STAND)** → oprești și dealerul joacă automat
-- **GPIO 27 (RESET)** → repornești jocul după ce s-a terminat
-
-### Reguli
-- Dacă depășești 21 → **BUST** (ai pierdut)
-- Dealerul trage cărți până ajunge la minim 17 puncte
-- Cel cu scorul mai mare câștigă; dacă sunt egale → **remiză**
-
----
-
-## 📁 Structura repo-ului
+##  Structura 
 
 ```
 blackjack-esp32/
@@ -73,7 +56,7 @@ blackjack-esp32/
 
 ---
 
-## 🎥 Demo
+## output
 
 Vezi fișierul `demo.mp4` din repo pentru o demonstrație a jocului pe hardware real.
 
