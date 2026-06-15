@@ -1,13 +1,5 @@
 # ESP32 Blackjack Console
-
-A hardware-based Blackjack game implemented on an ESP32 microcontroller, featuring an I2C OLED display and physical GPIO button inputs. The project demonstrates finite state machine logic, hardware debouncing, and peripheral communication in C/C++.
-
----
-
-## Descriere
-
-Jucătorul trage cărți (HIT) sau se oprește (STAND) folosind butoane conectate la GPIO-urile ESP32. Dealerul joacă automat conform regulilor clasice de Blackjack (trage până la minim 17 puncte). Rezultatul este afișat în timp real pe ecranul OLED.
-
+Joc de Blackjack implementat hardware pe un microcontroler ESP32, dotat cu un display OLED pe interfața I2C și butoane fizice conectate la pinii GPIO. Proiectul demonstrează logica de tip automat de stări (FSM), filtrarea semnalelor (hardware debouncing) și comunicarea cu perifericele în C/C++.
 ---
 
 ## Componente Hardware
