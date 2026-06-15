@@ -47,6 +47,6 @@ blackjack-esp32/
 
 ## output
 
-Vezi fișierul `demo.mp4` din repo pentru o demonstrație a jocului pe hardware real.
 
----
+https://github.com/user-attachments/assets/f913fe4f-be90-4de5-984c-78d011dcea74
+
