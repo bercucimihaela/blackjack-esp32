@@ -41,7 +41,6 @@ Pentru a compila și încărca proiectul:
 ```
 blackjack-esp32/
 ├── blackjack_esp32.ino   # Codul sursă principal
-├── prezentare_pia.pptx   # Prezentarea proiectului
 ├── demo.mp4              # Video demonstrativ (display în funcțiune)
 └── README.md             # Acest fișier
 ```
